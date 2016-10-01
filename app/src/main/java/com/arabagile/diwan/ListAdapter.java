@@ -7,13 +7,16 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * Created by trainer on 10/1/16.
  */
 
 public class ListAdapter extends RecyclerView.Adapter<ListAdapter.ViewHolder> {
 
-    private String[] mDataset;
+    private List<Post> mDataset;
 
     // Provide a reference to the views for each data item
     // Complex data items may need more than one view per item, and
@@ -42,8 +45,13 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.ViewHolder> {
     }
 
     // Provide a suitable constructor (depends on the kind of dataset)
-    public ListAdapter(String[] myDataset) {
-        mDataset = myDataset;
+    public ListAdapter() {
+        mDataset = new ArrayList<>();
+    }
+
+    // Provide a suitable constructor (depends on the kind of dataset)
+    public ListAdapter(List<Post> dataset) {
+        mDataset = dataset;
     }
 
     // Create new views (invoked by the layout manager)
@@ -70,7 +78,11 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.ViewHolder> {
     // Return the size of your dataset (invoked by the layout manager)
     @Override
     public int getItemCount() {
-        return mDataset.length;
+        return mDataset.size();
+    }
+
+    public void add(Post post) {
+        mDataset.add(post);
     }
 
 
