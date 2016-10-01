@@ -11,7 +11,7 @@ public class Post {
 
     String author;
     String authorPicture;
-    Date data;
+    Date date;
     String bodyText;
     int comments_count;
 
@@ -34,12 +34,12 @@ public class Post {
         this.authorPicture = authorPicture;
     }
 
-    public Date getData() {
-        return data;
+    public Date getDate() {
+        return date;
     }
 
-    public void setData(Date data) {
-        this.data = data;
+    public void setDate(Date date) {
+        this.date = date;
     }
 
     public String getBodyText() {
